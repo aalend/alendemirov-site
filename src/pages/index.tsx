@@ -2,27 +2,21 @@ import Content from '@/components/elements/content';
 import Photo from '@/components/elements/photo';
 import Icons from '@/components/social/icons';
 import Container from '@/components/ui/container';
+import Layout from '@/components/ui/layout';
+import Card from '@/features/contentful/components/card';
+import { ProjectProps } from '@/features/contentful/types/data';
 import Skills from '@/features/show-skills/components/skills';
 import Head from 'next/head';
 import Link from 'next/link';
+import getContentfulData from './projects/api/getContentfulData';
 
-import avatar from '../assets/alendemirov.webp';
-import SPAImg from '../assets/Screenshot_20230218_110505.png';
-
-export default function Home() {
+export default function Home({ projects }: { projects: ProjectProps[] }) {
 	return (
 		<>
 			<Head>
 				<title>Alen Demirov</title>
 			</Head>
-			<header>
-				<Container>
-					<div className='py-12'>
-						<Link href={'/'}>Alen</Link>
-					</div>
-				</Container>
-			</header>
-			<main id={'main-content'} tabIndex={-1}>
+			<Layout>
 				<section>
 					<Container>
 						<div className='grid gap-8'>
@@ -38,7 +32,9 @@ export default function Home() {
 							</div>
 							<Photo
 								className='aspect-video w-full rounded-md object-cover'
-								src={avatar}
+								src={
+									'https://images.ctfassets.net/ya9ebrot0car/5VCcnwJ1DbijuBSSzqFP36/c1c7a6f7f01121e9b8398f7d9394b42c/alen-demirov.jpg'
+								}
 								alt={'Alen Demirov'}
 							/>
 							<p>
@@ -58,25 +54,7 @@ export default function Home() {
 					heading="What I've been working on"
 					subHeading='Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates iste fugiat illo, exercitationem nobis earum quisquam mollitia.'
 				>
-					<div>
-						<Photo
-							src={SPAImg}
-							alt={'Single page desing portfilio'}
-							className='mb-8 w-full rounded-md shadow-md'
-						/>
-						<h3 className='mb-4 text-xl font-bold'>Single page design portfolio</h3>
-						<p className='mb-2'>
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, sed iure architecto
-							odit iusto at laboriosam dignissimos.
-						</p>
-						<Link
-							className='font-bold hover:underline hover:underline-offset-4'
-							href={'/projects'}
-							target={'_blank'}
-						>
-							View story
-						</Link>
-					</div>
+					<Card projects={projects} />
 				</Content>
 				<Content
 					className='bg-gray-50'
@@ -90,15 +68,31 @@ export default function Home() {
 						aalendemirov@gmail.com
 					</a>
 				</Content>
-			</main>
-			<footer className='bg-gray-50'>
-				<Container>
-					<div className='flex justify-between py-12'>
-						<Link href={'/'}>Alen</Link>
-						<Icons width={20} />
-					</div>
-				</Container>
-			</footer>
+			</Layout>
 		</>
 	);
+}
+
+export async function getStaticProps() {
+	const data = await getContentfulData(`
+		query {
+			personalProjectsCollection {
+				items {
+					title
+					slug
+					image {
+						title
+						url
+					}
+					description
+				}
+			}
+		}
+	`);
+
+	return {
+		props: {
+			projects: data.personalProjectsCollection.items,
+		},
+	};
 }
