@@ -1,27 +1,33 @@
 import Content from '@/components/elements/content';
-import Photo from '@/components/elements/photo';
 import Container from '@/components/ui/container';
 import Layout from '@/components/ui/layout';
+import { MDXRemote } from 'next-mdx-remote';
+import { serialize } from 'next-mdx-remote/serialize';
 import Head from 'next/head';
+import remarkGfm from 'remark-gfm';
 import getContentfulData from './api/getContentfulData';
+import Center from './components/center';
+import Icon from './components/icon';
+import Splitter from './components/splitter';
 
-export default function PersonalProjects({ project }: any) {
+const components = {
+	Center,
+	Icon,
+	Splitter,
+};
+
+export default function PersonalProjects({ project, mdxContent }: any) {
 	return (
 		<>
 			<Head>
 				<title>Alen Demirov - {project.title}</title>
 			</Head>
 			<Layout>
-				<section className='prose mx-auto mb-12 max-w-3xl'>
+				<section className='prose mx-auto mb-12 max-w-3xl prose-thead:border-0 prose-tr:border-0'>
 					<Container>
-						<h1>{project.title}</h1>
-						<p>{project.description}</p>
-						<Photo
-							className='rounded-md'
-							src={project.image.url}
-							alt={project.image.title}
-						></Photo>
-						<article>{project.content}</article>
+						<article>
+							<MDXRemote {...mdxContent} components={components} lazy />
+						</article>
 					</Container>
 				</section>
 				<Content
@@ -68,11 +74,18 @@ export async function getStaticProps({ params }: any) {
 
 	const [project] = data.personalProjectsCollection.items;
 
-	const contentSource = project.content;
+	const { content } = project;
+	const mdxContent = await serialize(content, {
+		mdxOptions: {
+			remarkPlugins: [remarkGfm],
+			format: 'mdx',
+		},
+	});
 
 	return {
 		props: {
 			project,
+			mdxContent,
 		},
 	};
 }
