@@ -5,7 +5,7 @@ import { MDXRemote } from 'next-mdx-remote';
 import { serialize } from 'next-mdx-remote/serialize';
 import Head from 'next/head';
 import remarkGfm from 'remark-gfm';
-import getContentfulData from './api/getContentfulData';
+import getContentfulData from '@/lib/getContentfulData';
 import Center from './components/center';
 import Icon from './components/icon';
 import Splitter from './components/splitter';

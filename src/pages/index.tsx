@@ -8,7 +8,7 @@ import { ProjectProps } from '@/features/contentful/types/data';
 import Skills from '@/features/show-skills/components/skills';
 import Head from 'next/head';
 import Link from 'next/link';
-import getContentfulData from './projects/api/getContentfulData';
+import getContentfulData from '../lib/getContentfulData';
 
 export default function Home({ projects }: { projects: ProjectProps[] }) {
 	return (
