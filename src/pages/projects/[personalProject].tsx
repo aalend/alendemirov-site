@@ -16,11 +16,11 @@ const components = {
 	Splitter,
 };
 
-export default function PersonalProjects({ project, mdxContent }: any) {
+export default function PersonalProjects({ mdxContent }: any) {
 	return (
 		<>
 			<Head>
-				<title>Alen Demirov - {project.title}</title>
+				<title>Alen Demirov</title>
 			</Head>
 			<Layout>
 				<section className='prose mx-auto mb-12 max-w-3xl prose-thead:border-0 prose-tr:border-0'>
