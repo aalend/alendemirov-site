@@ -23,7 +23,7 @@ export default function PersonalProjects({ mdxContent }: any) {
 				<title>Alen Demirov</title>
 			</Head>
 			<Layout>
-				<section className='prose mx-auto mb-12 max-w-3xl prose-thead:border-0 prose-tr:border-0'>
+				<section className='prose mx-auto mb-36 max-w-3xl prose-thead:border-0 prose-tr:border-0'>
 					<Container>
 						<article>
 							<MDXRemote {...mdxContent} components={components} lazy />
