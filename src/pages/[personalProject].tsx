@@ -1,14 +1,14 @@
 import Content from '@/components/elements/content';
 import Container from '@/components/ui/container';
 import Layout from '@/components/ui/layout';
+import getContentfulData from '@/lib/getContentfulData';
 import { MDXRemote } from 'next-mdx-remote';
 import { serialize } from 'next-mdx-remote/serialize';
 import Head from 'next/head';
 import remarkGfm from 'remark-gfm';
-import getContentfulData from '@/lib/getContentfulData';
-import Center from './components/center';
-import Icon from './components/icon';
-import Splitter from './components/splitter';
+import Center from '../components/elements/center';
+import Icon from '../components/elements/icon';
+import Splitter from '../components/elements/splitter';
 
 const components = {
 	Center,
@@ -23,7 +23,7 @@ export default function PersonalProjects({ mdxContent }: any) {
 				<title>Alen Demirov</title>
 			</Head>
 			<Layout>
-				<section className='prose mx-auto mb-36 max-w-3xl prose-thead:border-0 prose-tr:border-0'>
+				<section className='prose mx-auto mb-24 max-w-3xl prose-thead:border-0 prose-tr:border-0'>
 					<Container>
 						<article>
 							<MDXRemote {...mdxContent} components={components} lazy />

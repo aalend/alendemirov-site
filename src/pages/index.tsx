@@ -1,5 +1,4 @@
 import Content from '@/components/elements/content';
-import Photo from '@/components/elements/photo';
 import Icons from '@/components/social/icons';
 import Container from '@/components/ui/container';
 import Layout from '@/components/ui/layout';
@@ -7,7 +6,7 @@ import Card from '@/features/contentful/components/card';
 import { ProjectProps } from '@/features/contentful/types/data';
 import Skills from '@/features/show-skills/components/skills';
 import Head from 'next/head';
-import Link from 'next/link';
+import Image from 'next/image';
 import getContentfulData from '../lib/getContentfulData';
 
 export default function Home({ projects }: { projects: ProjectProps[] }) {
@@ -30,12 +29,15 @@ export default function Home({ projects }: { projects: ProjectProps[] }) {
 									Front-end Developer. Lorem ipsum dolor sit amet consectetur adipisicing.
 								</p>
 							</div>
-							<Photo
-								className='aspect-video w-full rounded-md object-cover'
+							<Image
+								className='aspect-video rounded-md object-cover'
 								src={
 									'https://images.ctfassets.net/ya9ebrot0car/5VCcnwJ1DbijuBSSzqFP36/c1c7a6f7f01121e9b8398f7d9394b42c/alen-demirov.jpg'
 								}
 								alt={'Alen Demirov'}
+								width={800}
+								height={400}
+								priority={true}
 							/>
 							<p>
 								Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id facilis, nulla fuga

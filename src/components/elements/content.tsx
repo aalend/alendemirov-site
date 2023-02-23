@@ -12,7 +12,7 @@ export default function Content({ heading, subHeading, children, className }: Co
 	return (
 		<section className={`${className ?? ''}`}>
 			<Container>
-				<div className='grid gap-8 py-12'>
+				<div className='grid gap-12 py-24'>
 					<div>
 						<h2 className='mb-4 text-3xl font-bold'>{heading}</h2>
 						<p className='text-gray-700'>{subHeading}</p>
