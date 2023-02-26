@@ -5,16 +5,15 @@ type ContentProps = {
 	heading: string;
 	subHeading: string;
 	children?: ReactNode;
-	className?: string;
 };
 
-export default function Content({ heading, subHeading, children, className }: ContentProps) {
+export default function Content({ heading, subHeading, children }: ContentProps) {
 	return (
-		<section className={`${className ?? ''}`}>
+		<section>
 			<Container>
-				<div className='grid gap-12 py-24'>
+				<div className='my-24 grid gap-10'>
 					<div>
-						<h2 className='mb-4 text-3xl font-bold'>{heading}</h2>
+						<h2 className='mb-4 text-3xl'>{heading}</h2>
 						<p className='text-gray-700'>{subHeading}</p>
 					</div>
 					{children}

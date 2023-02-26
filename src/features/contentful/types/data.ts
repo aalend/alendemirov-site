@@ -4,6 +4,8 @@ export type ProjectProps = {
 	image: {
 		title: string;
 		url: string;
+		width: number;
+		height: number;
 	};
 	description: string;
 	content: string;

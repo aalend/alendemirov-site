@@ -1,4 +1,11 @@
 @tailwind base;
+
+@layer base {
+	:where(h1, h2, h3) {
+		@apply font-heading;
+	}
+}
+
 @tailwind components;
 @tailwind utilities;
 

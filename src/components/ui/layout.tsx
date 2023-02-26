@@ -1,23 +1,21 @@
-import Link from 'next/link';
 import { ReactNode } from 'react';
+import Logo from '../elements/logo';
 import Icons from '../social/icons';
 import Container from './container';
 
 export default function Layout({ children }: { children: ReactNode }) {
 	return (
 		<>
-			<header>
+			<header className='mt-12'>
 				<Container>
-					<div className='py-12'>
-						<Link href={'/'}>Alen</Link>
-					</div>
+					<Logo />
 				</Container>
 			</header>
 			<main>{children}</main>
-			<footer className='bg-gray-50'>
+			<footer>
 				<Container>
 					<div className='flex justify-between py-12'>
-						<Link href={'/'}>Alen</Link>
+						<Logo />
 						<Icons width={20} />
 					</div>
 				</Container>
