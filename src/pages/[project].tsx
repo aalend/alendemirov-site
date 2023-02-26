@@ -2,11 +2,15 @@ import Content from '@/components/elements/content';
 import Container from '@/components/ui/container';
 import Layout from '@/components/ui/layout';
 import getContentfulData from '@/lib/getContentfulData';
-import { MDXRemote } from 'next-mdx-remote';
-import { serialize } from 'next-mdx-remote/serialize';
 import Head from 'next/head';
 import Image from 'next/image';
-import remarkGfm from 'remark-gfm';
+
+type WebStackImagesProps = {
+	title: string;
+	url: string;
+	width: number;
+	height: number;
+};
 
 export default function PersonalProjects({ item }: any) {
 	console.log(item);
@@ -33,24 +37,26 @@ export default function PersonalProjects({ item }: any) {
 							<p>{item.projectPurposeAndGoal}</p>
 							<div className='flex flex-col-reverse gap-8 md:flex-row'>
 								<div className='flex basis-1/2 flex-col items-center justify-center gap-8'>
-									{item.webStackImagesCollection.items.map((img, i: number) => {
-										return (
-											<div
-												key={i}
-												className='flex w-40 items-center gap-4 rounded-md border py-2 px-4 text-center shadow-md'
-											>
-												<Image
-													className='m-0'
-													src={img.url}
-													alt={img.title}
-													width={img.width}
-													height={img.height}
-													priority={true}
-												/>
-												<span>{img.title}</span>
-											</div>
-										);
-									})}
+									{item.webStackImagesCollection.items.map(
+										(img: WebStackImagesProps, i: number) => {
+											return (
+												<div
+													key={i}
+													className='flex w-40 items-center gap-4 rounded-md border py-2 px-4 text-center shadow-md'
+												>
+													<Image
+														className='m-0'
+														src={img.url}
+														alt={img.title}
+														width={img.width}
+														height={img.height}
+														priority={true}
+													/>
+													<span>{img.title}</span>
+												</div>
+											);
+										}
+									)}
 								</div>
 								<div className='basis-1/2'>
 									<h2>Web Stack and Explanation</h2>
