@@ -2,11 +2,13 @@ import Image from 'next/image';
 import TOOLS from '../data/skills.json';
 
 type ToolsProps = {
-	name: string;
-	icon: string;
+	item: {
+		name: string;
+		icon: string;
+	};
 };
 
-const SkillsItem = function ({ item: { name, icon } }) {
+const SkillsItem = function ({ item: { name, icon } }: ToolsProps) {
 	return (
 		<li className='flex basis-auto items-center gap-4 rounded-md border py-2 px-4 text-center shadow-md'>
 			<Image
