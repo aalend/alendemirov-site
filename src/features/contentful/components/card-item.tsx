@@ -3,7 +3,6 @@ import Link from 'next/link';
 import { ProjectProps } from '../types/data';
 
 export default function CardItem({ project }: { project: ProjectProps }) {
-	console.log(project);
 	return (
 		<div>
 			<Image
