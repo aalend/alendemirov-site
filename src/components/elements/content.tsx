@@ -14,7 +14,7 @@ export default function Content({ heading, subHeading, children }: ContentProps)
 				<div className='my-24 grid gap-10'>
 					<div>
 						<h2 className='mb-4 text-3xl'>{heading}</h2>
-						<p className='text-gray-700'>{subHeading}</p>
+						<p>{subHeading}</p>
 					</div>
 					{children}
 				</div>

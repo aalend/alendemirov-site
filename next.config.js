@@ -5,6 +5,9 @@ const nextConfig = {
 		domains: ['images.ctfassets.net', 'ik.imagekit.io'],
 		dangerouslyAllowSVG: true,
 	},
+	experimental: {
+		appDir: true,
+	},
 };
 
 module.exports = nextConfig;

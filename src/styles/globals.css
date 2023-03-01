@@ -4,6 +4,10 @@
 	:where(h1, h2, h3) {
 		@apply font-heading;
 	}
+
+	p {
+		@apply text-lg;
+	}
 }
 
 @tailwind components;
