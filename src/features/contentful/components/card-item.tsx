@@ -17,7 +17,7 @@ export default function CardItem({ project }: { project: ProjectProps }) {
 			<p className='mb-2 line-clamp-3'>{project.description}</p>
 			<Link
 				className='font-bold hover:underline hover:underline-offset-4'
-				href={`${project.slug}`}
+				href={`project/${project.slug}`}
 			>
 				View story
 			</Link>
