@@ -16,9 +16,31 @@ type paramsProps = {
 	};
 };
 
+type projectProps = {
+	slug: string;
+};
+
 export const metadata = {
 	title: 'Alen Demirov',
 };
+
+export async function generateStaticParams() {
+	const { personalProjectsCollection } = await getContentfulData(`
+  query LoadAllProjects {
+    personalProjectsCollection {
+      items {
+        slug
+      }
+    }
+  }
+`);
+
+	const { items } = personalProjectsCollection;
+
+	return items.map((project: projectProps) => ({
+		slug: project.slug,
+	}));
+}
 
 export default async function PersonalProjects({ params: { slug } }: paramsProps) {
 	const { personalProjectsCollection } = await getContentfulData(
