@@ -26,8 +26,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 				<main>{children}</main>
 				<footer>
 					<Container>
-						<div className='flex justify-between pb-12'>
-							<Logo />
+						<div className='flex flex-wrap-reverse items-center justify-center gap-8 pb-12 sm:justify-between'>
+							<div>Copyright &copy; 2023 &middot; Alen Demirov</div>
 							<Icons width={20} />
 						</div>
 					</Container>

@@ -10,16 +10,20 @@ type ToolsProps = {
 
 const SkillsItem = function ({ item: { name, icon } }: ToolsProps) {
 	return (
-		<li className='flex basis-auto items-center gap-4 rounded-md border py-2 px-4 text-center shadow-md'>
-			<Image
-				className='object-cover'
-				src={icon}
-				alt={name}
-				width={24}
-				height={24}
-				priority={true}
-			/>
-			<span>{name}</span>
+		<li className='rounded-md shadow-md'>
+			<div className='rounded-md bg-gradient-to-tr from-pink-400 via-red-400 to-yellow-400 p-[2px] text-center'>
+				<div className='flex h-full w-full basis-auto items-center gap-3 rounded-md bg-neutral-50 px-4 py-2 dark:bg-neutral-800'>
+					<Image
+						className='object-cover'
+						src={icon}
+						alt={name}
+						width={24}
+						height={24}
+						priority={true}
+					/>
+					<span>{name}</span>
+				</div>
+			</div>
 		</li>
 	);
 };

@@ -2,6 +2,7 @@ import Cta from '@/components/elements/cta';
 import Container from '@/components/ui/container';
 import getContentfulData from '@/lib/getContentfulData';
 import Image from 'next/image';
+import Link from 'next/link';
 
 type WebStackImagesProps = {
 	title: string;
@@ -51,6 +52,7 @@ export default async function PersonalProjects({ params: { slug } }: paramsProps
 						title
 						slug
 						description
+						stack
 						image {
 							title
 							url
@@ -102,6 +104,32 @@ export default async function PersonalProjects({ params: { slug } }: paramsProps
 					<article className='mt-12'>
 						<h1>{item.title}</h1>
 						<p>{item.description}</p>
+						<table>
+							<thead>
+								<tr>
+									<th>Type</th>
+									<th>Stack</th>
+									<th>Live</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>{item.stack.type}</td>
+									<td>
+										{item.stack.stack.map((item: string, index: number) => (
+											<div key={index} className={'mb-2'}>
+												{item}
+											</div>
+										))}
+									</td>
+									<td>
+										<Link href={item.stack.live} target={'_blank'} rel='noopener noreferrer'>
+											Visit site
+										</Link>
+									</td>
+								</tr>
+							</tbody>
+						</table>
 						<Image
 							className=' rounded-md object-cover'
 							src={item.image.url}

@@ -1,6 +1,5 @@
 import Content from '@/components/elements/content';
 import Cta from '@/components/elements/cta';
-import Icons from '@/components/social/icons';
 import Container from '@/components/ui/container';
 import Card from '@/features/contentful/components/card';
 import Skills from '@/features/show-skills/components/skills';
@@ -37,10 +36,6 @@ export default async function Home() {
 			<section>
 				<Container>
 					<div className='my-24 grid gap-8'>
-						<div className='flex items-center gap-8'>
-							<div className='h-[2px] w-32 bg-neutral-400'></div>
-							<Icons width={20} />
-						</div>
 						<div className='grid gap-4'>
 							<h1 className='text-5xl'>Hello, I&apos;m Alen.</h1>
 							<p className='text-2xl'>
