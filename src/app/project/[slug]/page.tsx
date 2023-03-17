@@ -133,7 +133,7 @@ export default async function PersonalProjects({ params: { slug } }: paramsProps
 						<Image
 							className=' rounded-md object-cover'
 							src={item.image.url}
-							alt={''}
+							alt={item.image.title}
 							width={item.image.width}
 							height={item.image.height}
 							priority={true}
@@ -151,7 +151,7 @@ export default async function PersonalProjects({ params: { slug } }: paramsProps
 											<Image
 												className='m-0'
 												src={img.url}
-												alt={''}
+												alt={img.title}
 												width={img.width}
 												height={img.height}
 												priority={true}
@@ -174,7 +174,7 @@ export default async function PersonalProjects({ params: { slug } }: paramsProps
 											key={index}
 											className='m-0 rounded-md'
 											src={img.url}
-											alt={''}
+											alt={img.title}
 											width={img.width}
 											height={img.height}
 											priority={true}
@@ -189,7 +189,7 @@ export default async function PersonalProjects({ params: { slug } }: paramsProps
 							<Image
 								className='m-0 rounded-md'
 								src={item.supportImage.url}
-								alt={''}
+								alt={item.supportImage.title}
 								width={item.supportImage.width}
 								height={item.supportImage.height}
 								priority={true}
