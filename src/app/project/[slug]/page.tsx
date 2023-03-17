@@ -97,6 +97,8 @@ export default async function PersonalProjects({ params: { slug } }: paramsProps
 	const { items } = personalProjectsCollection;
 	const [item] = items;
 
+	console.log(item);
+
 	return (
 		<>
 			<section className='prose mx-auto mb-24 max-w-3xl dark:prose-invert prose-thead:border-0 prose-tr:border-0'>
