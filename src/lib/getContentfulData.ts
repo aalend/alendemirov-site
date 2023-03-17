@@ -17,5 +17,6 @@ export default async function getContentfulData(query: string, variables = {}) {
 	if (!res.ok) throw Error(`Cannot get data from ContentfulURL. - ${res.status}`);
 
 	const { data } = await res.json();
+
 	return data;
 }
