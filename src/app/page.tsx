@@ -36,7 +36,7 @@ export default async function Home() {
 			<section>
 				<Container>
 					<div className='my-24 grid gap-8'>
-						<div className='flex items-center justify-between gap-8'>
+						<div className='flex flex-col-reverse md:flex-row items-center justify-between gap-8'>
 							<div className='grid gap-4'>
 								<h1 className='text-4xl'>Hello, I&apos;m Alen.</h1>
 								<p>Front-end developer with a passion for creating websites.</p>
@@ -47,7 +47,7 @@ export default async function Home() {
 								</p>
 							</div>
 							<Image
-								className='aspect-square rounded-full object-cover'
+								className='aspect-square rounded-full object-cover self-start'
 								src={
 									'https://ik.imagekit.io/hhrhmkcoa/alendemirov-assets/20220111_161233.jpg?updatedAt=1678995416097'
 								}
