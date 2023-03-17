@@ -62,7 +62,6 @@ export default async function PersonalProjects({ params: { slug } }: paramsProps
 						projectPurposeAndGoal
 						webStackImagesCollection {
 							items {
-								title
 								url
 								width
 								height
@@ -71,7 +70,6 @@ export default async function PersonalProjects({ params: { slug } }: paramsProps
 						webStackAndExplanation
 						supportImagesCollection {
 							items {
-								title
 								url
 								width
 								height
@@ -79,7 +77,6 @@ export default async function PersonalProjects({ params: { slug } }: paramsProps
 						}
 						problemsAndThoughtProcess
 						supportImage {
-							title
 							url
 							width
 							height
@@ -133,7 +130,7 @@ export default async function PersonalProjects({ params: { slug } }: paramsProps
 						<Image
 							className=' rounded-md object-cover'
 							src={item.image.url}
-							alt={item.image.title}
+							alt={''}
 							width={item.image.width}
 							height={item.image.height}
 							priority={true}
@@ -151,7 +148,7 @@ export default async function PersonalProjects({ params: { slug } }: paramsProps
 											<Image
 												className='m-0'
 												src={img.url}
-												alt={img.title}
+												alt={''}
 												width={img.width}
 												height={img.height}
 												priority={true}
@@ -174,7 +171,7 @@ export default async function PersonalProjects({ params: { slug } }: paramsProps
 											key={index}
 											className='m-0 rounded-md'
 											src={img.url}
-											alt={img.title}
+											alt={''}
 											width={img.width}
 											height={img.height}
 											priority={true}
@@ -189,7 +186,7 @@ export default async function PersonalProjects({ params: { slug } }: paramsProps
 							<Image
 								className='m-0 rounded-md'
 								src={item.supportImage.url}
-								alt={item.supportImage.title}
+								alt={''}
 								width={item.supportImage.width}
 								height={item.supportImage.height}
 								priority={true}
