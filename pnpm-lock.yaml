@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@netlify/functions': ^1.4.0
   '@netlify/plugin-nextjs': ^4.30.4
   '@next/font': 13.1.6
   '@tailwindcss/line-clamp': ^0.4.2
@@ -25,6 +26,7 @@ specifiers:
   typescript: 4.9.5
 
 dependencies:
+  '@netlify/functions': 1.4.0
   '@netlify/plugin-nextjs': 4.32.2
   '@next/font': 13.1.6
   '@tailwindcss/line-clamp': 0.4.2_tailwindcss@3.2.7
