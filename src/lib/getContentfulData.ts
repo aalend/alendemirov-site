@@ -11,6 +11,9 @@ export default async function getContentfulData(query: string, variables = {}) {
 				query,
 				variables,
 			}),
+			next: {
+				revalidate: 60,
+			},
 		}
 	);
 
