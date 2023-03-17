@@ -71,6 +71,7 @@ export default async function PersonalProjects({ params: { slug } }: paramsProps
 						webStackAndExplanation
 						supportImagesCollection {
 							items {
+								title
 								url
 								width
 								height
@@ -78,6 +79,7 @@ export default async function PersonalProjects({ params: { slug } }: paramsProps
 						}
 						problemsAndThoughtProcess
 						supportImage {
+							title
 							url
 							width
 							height
