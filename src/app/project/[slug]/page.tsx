@@ -62,6 +62,7 @@ export default async function PersonalProjects({ params: { slug } }: paramsProps
 						projectPurposeAndGoal
 						webStackImagesCollection {
 							items {
+								title
 								url
 								width
 								height
