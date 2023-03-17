@@ -6,7 +6,7 @@
 	}
 
 	p {
-		@apply text-lg;
+		@apply text-base;
 	}
 }
 

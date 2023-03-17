@@ -8,6 +8,7 @@ type ToolsProps = {
 	};
 };
 
+// export this function to component
 const SkillsItem = function ({ item: { name, icon } }: ToolsProps) {
 	return (
 		<li className='rounded-md shadow-md'>
@@ -17,8 +18,8 @@ const SkillsItem = function ({ item: { name, icon } }: ToolsProps) {
 						className='object-cover'
 						src={icon}
 						alt={name}
-						width={24}
-						height={24}
+						width={20}
+						height={20}
 						priority={true}
 					/>
 					<span>{name}</span>

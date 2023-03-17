@@ -12,22 +12,22 @@ export const metadata = {
 
 export default async function Home() {
 	const { personalProjectsCollection } = await getContentfulData(`
-  query LoadAllProjects {
-    personalProjectsCollection {
-      items {
-        title
-        slug
-        description
-        image {
-          title
-          url
-          width
-          height
-        }
-      }
-    }
-  }
-`);
+		query LoadAllProjects {
+			personalProjectsCollection {
+				items {
+					title
+					slug
+					description
+					image {
+						title
+						url
+						width
+						height
+					}
+				}
+			}
+		}
+	`);
 
 	const { items } = personalProjectsCollection;
 
@@ -36,30 +36,27 @@ export default async function Home() {
 			<section>
 				<Container>
 					<div className='my-24 grid gap-8'>
-						<div className='grid gap-4'>
-							<h1 className='text-5xl'>Hello, I&apos;m Alen.</h1>
-							<p className='text-2xl'>
-								I&apos;m a self-taught front-end developer with a passion for creating websites.
-							</p>
+						<div className='flex items-center justify-between gap-8'>
+							<div className='grid gap-4'>
+								<h1 className='text-4xl'>Hello, I&apos;m Alen.</h1>
+								<p>Front-end developer with a passion for creating websites.</p>
+								<p className='text-neutral-400'>
+									I&apos;m a curious and resourceful learner who utilizes diverse sources of
+									knowledge, including YouTube and other similar platforms, to expand my
+									understanding and sharpen my skills.
+								</p>
+							</div>
+							<Image
+								className='aspect-square rounded-full object-cover'
+								src={
+									'https://ik.imagekit.io/hhrhmkcoa/alendemirov-assets/20220111_161233.jpg?updatedAt=1678995416097'
+								}
+								alt={'Alen Demirov'}
+								width={128}
+								height={128}
+								priority={true}
+							/>
 						</div>
-						<Image
-							className='aspect-video rounded-md object-cover'
-							src={
-								'https://ik.imagekit.io/hhrhmkcoa/alendemirov-assets/pexels-justin-shaifer-1222271.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1677414527070'
-							}
-							alt={'Alen Demirov'}
-							width={800}
-							height={400}
-							priority={true}
-						/>
-						<p>
-							Everything I&apos;ve learned so far has been through trial, error and experimentation
-							with code and various tools. I have a keen interest in staying up-to-date with the
-							latest trends and advancements in technology, and I actively engage with similar
-							communities. I&apos;m a curious and resourceful learner who utilizes diverse sources
-							of knowledge, including YouTube and other similar platforms, to expand my
-							understanding and sharpen my skills.
-						</p>
 					</div>
 				</Container>
 			</section>
