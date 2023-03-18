@@ -6,10 +6,6 @@ import Skills from '@/features/show-skills/components/skills';
 import Image from 'next/image';
 import getContentfulData from '../lib/getContentfulData';
 
-export const metadata = {
-	title: 'Alen Demirov',
-};
-
 export default async function Home() {
 	const { personalProjectsCollection } = await getContentfulData(`
 		query LoadAllProjects {
