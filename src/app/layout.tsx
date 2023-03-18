@@ -15,7 +15,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 	return (
 		<html
 			lang='en'
-			className={`text-neutral-800 dark:bg-neutral-800 dark:text-neutral-50 ${hindMadurai.variable} ${montserrat.variable}`}
+			className={`bg-neutral-900 text-neutral-100 ${hindMadurai.variable} ${montserrat.variable}`}
 		>
 			<body>
 				<header className='mt-12'>
@@ -26,7 +26,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 				<main>{children}</main>
 				<footer>
 					<Container>
-						<div className='flex flex-wrap-reverse items-center justify-center gap-8 pb-12 sm:justify-between'>
+						<div className='flex flex-wrap-reverse items-center justify-center text-center gap-8 pb-12 sm:justify-between'>
 							<div>Copyright &copy; 2023 &middot; Alen Demirov</div>
 							<Icons width={20} />
 						</div>

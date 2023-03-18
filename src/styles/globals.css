@@ -4,10 +4,6 @@
 	:where(h1, h2, h3) {
 		@apply font-heading;
 	}
-
-	p {
-		@apply text-base;
-	}
 }
 
 @tailwind components;
@@ -19,5 +15,9 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
+	}
+
+	.text-bg-clip {
+		@apply bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 inline-flex text-transparent bg-clip-text;
 	}
 }

@@ -123,7 +123,12 @@ export default async function PersonalProjects({ params: { slug } }: paramsProps
 										))}
 									</td>
 									<td>
-										<Link href={item.stack.live} target={'_blank'} rel='noopener noreferrer'>
+										<Link
+											href={item.stack.live}
+											target={'_blank'}
+											rel='noopener noreferrer'
+											className='no-underline text-bg-clip animate-text'
+										>
 											Visit site
 										</Link>
 									</td>
