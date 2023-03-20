@@ -21,10 +21,6 @@ type projectProps = {
 	slug: string;
 };
 
-export const metadata = {
-	title: 'Alen Demirov',
-};
-
 export async function generateStaticParams() {
 	const { personalProjectsCollection } = await getContentfulData(`
   query LoadAllProjects {

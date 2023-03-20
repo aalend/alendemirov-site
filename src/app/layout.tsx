@@ -13,6 +13,11 @@ const hindMadurai = Hind_Madurai({
 
 export const metadata = {
 	title: 'Alen Demirov',
+	icons: {
+		icon: '/favicon.ico',
+		apple: '/apple-touch-icon.png',
+		manifest: '/site.webmanifest',
+	},
 	description:
 		"Front-end developer with a passion for creating websites. - I'm a curious and resourceful learner who utilizes diverse sources of knowledge, including YouTube and other similar platforms, to expand my understanding and sharpen my skills.",
 	openGraph: {
